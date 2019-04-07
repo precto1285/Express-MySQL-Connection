@@ -1,0 +1,19 @@
+{
+  "name": "express-mysql-connection",
+  "version": "1.0.0",
+  "description": "An Express MySQL SETUP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/precto1285/Express-MySQL-Connection.git"
+  },
+  "author": "Philippe Recto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/precto1285/Express-MySQL-Connection/issues"
+  },
+  "homepage": "https://github.com/precto1285/Express-MySQL-Connection#readme"
+}
