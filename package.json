@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/precto1285/Express-MySQL-Connection/issues"
   },
-  "homepage": "https://github.com/precto1285/Express-MySQL-Connection#readme"
+  "homepage": "https://github.com/precto1285/Express-MySQL-Connection#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
 }
