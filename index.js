@@ -1,9 +1,15 @@
-//Call dependencies
-
+//Require NPM packages
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
 
+//Create app with NPM Package Express
+const app = express();
+
+//Use NPM Package Cors
+app.use(cors());
+
+//Connect to MySQL Database with NPM Package mysql
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -11,14 +17,31 @@ const connection = mysql.createConnection({
   database: 'foodindex_db'
 });
 
+//Create Query to show data
+const SELECT_ALL_FOODINDEX_QUERY = 'SELECT * FROM foodindex';
+
+//Test connection
 connection.connect((err) => {
   if (err) {
     return err;
   }
 });
 
-const app = express();
+//Show data on browser "localhost:4000/"
+app.get('/', (req, res) => {
+  connection.query(SELECT_ALL_FOODINDEX_QUERY, (err, results) => {
+    if (err) {
+      return res.send(err)
+    }
+    else {
+      return res.json({
+        data: results
+      })
+    }
+  })
+})
 
-app.use(cors());
+//Listen to server
+PORT = 4000;
 
-app.listen(4000, console.log('Listening to APP on PORT 4000'));
+app.listen(PORT, console.log(`Listening to server on PORT ${PORT}`));
